@@ -44,3 +44,7 @@ const calendarRequest = await fetch(
 );
 const calendarData = await calendarRequest.json();
 console.log(calendarData);
+await Deno.writeTextFile(
+    "calendar.json",
+    JSON.stringify(calendarData, null, 2),
+);
